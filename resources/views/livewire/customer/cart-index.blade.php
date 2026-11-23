@@ -6,11 +6,11 @@
             </a>
 
             <div class="flex items-center gap-5 text-sm">
-                <a href="{{ route('home') }}" class="hover:text-orange-700">Continue shopping</a>
+                <a href="{{ route('home') }}" class="hover:text-ember-600">Continue shopping</a>
                 <a href="{{ route('cart.index') }}" class="font-semibold text-orange-700">
                     Cart ({{ $cartCount }})
                 </a>
-                <a href="{{ route('orders.index') }}" class="hover:text-orange-700">
+                <a href="{{ route('orders.index') }}" class="hover:text-ember-600">
                     My orders
                 </a>
             </div>
@@ -45,7 +45,7 @@
                 </p>
 
                 <a href="{{ route('home') }}"
-                   class="mt-6 inline-block rounded-lg bg-orange-700 px-6 py-3 font-semibold text-white hover:bg-orange-800">
+                   class="mt-6 inline-block rounded-lg bg-ember-500 px-6 py-3 font-semibold text-white hover:bg-ember-600">
                     Browse books
                 </a>
             </div>
@@ -198,7 +198,7 @@
                         </div>
                     @else
                         <a href="{{ route('checkout') }}"
-                           class="mt-6 block rounded-lg bg-orange-700 px-4 py-3 text-center font-semibold text-white hover:bg-orange-800">
+                           class="mt-6 block rounded-lg bg-ember-500 px-4 py-3 text-center font-semibold text-white hover:bg-orange-600">
                             Proceed to checkout
                         </a>
                     @endif

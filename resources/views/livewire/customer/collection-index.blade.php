@@ -10,7 +10,7 @@
             </a>
 
             <nav class="flex items-center gap-5 text-sm">
-                <a href="{{ route('home') }}" class="hover:text-orange-700">
+                <a href="{{ route('home') }}" class="hover:text-ember-600">
                     Home
                 </a>
 
@@ -20,23 +20,23 @@
                 </a>
 
                 @auth
-                    <a href="{{ route('orders.index') }}" class="hover:text-orange-700">
+                    <a href="{{ route('orders.index') }}" class="hover:text-ember-600">
                         My Orders
                     </a>
                 @endauth
 
-                <a href="{{ route('cart.index') }}" class="hover:text-orange-700">
+                <a href="{{ route('cart.index') }}" class="hover:text-ember-600">
                     Cart ({{ $cartCount }})
                 </a>
 
                 @guest
-                    <a href="{{ route('login') }}" class="hover:text-orange-700">
+                    <a href="{{ route('login') }}" class="hover:text-ember-600">
                         Sign In
                     </a>
                 @else
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <button type="submit" class="hover:text-orange-700">
+                        <button type="submit" class="hover:text-ember-600">
                             Logout
                         </button>
                     </form>
@@ -73,14 +73,14 @@
                     type="search"
                     wire:model.live.debounce.300ms="search"
                     placeholder="Search by title, ISBN, or author..."
-                    class="w-full rounded-lg border-gray-300 px-4 py-3 shadow-sm focus:border-orange-500 focus:ring-orange-500"
+                    class="w-full rounded-lg border-gray-300 px-4 py-3 shadow-sm focus:border-orange-500 focus:ring-ember-400"
                 >
             </div>
 
             <div class="sm:w-56">
                 <select
                     wire:model.live="sortBy"
-                    class="w-full rounded-lg border-gray-300 px-4 py-3 shadow-sm focus:border-orange-500 focus:ring-orange-500"
+                    class="w-full rounded-lg border-gray-300 px-4 py-3 shadow-sm focus:border-orange-500 focus:ring-ember-400"
                 >
                     <option value="newest">Newest first</option>
                     <option value="title">Title: A–Z</option>
@@ -135,7 +135,7 @@
 
                         <h3 class="text-sm font-semibold">
                             <a href="{{ route('product.show', $product->slug) }}"
-                               class="hover:text-orange-700">
+                               class="hover:text-ember-600">
                                 {{ Str::limit($product->title, 60) }}
                             </a>
                         </h3>
@@ -173,7 +173,7 @@
                                     <button
                                         wire:click="addToCart({{ $product->id }})"
                                         wire:loading.attr="disabled"
-                                        class="w-full rounded-lg bg-orange-700 px-3 py-2 text-sm font-medium text-white hover:bg-orange-800 disabled:opacity-60"
+                                        class="bg-ember-500 hover:bg-ember-600 text-white font-semibold px-5 py-2.5 rounded-lg shadow-sm transition"
                                     >
                                         Add to Cart
                                     </button>
