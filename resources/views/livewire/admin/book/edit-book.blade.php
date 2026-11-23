@@ -227,7 +227,7 @@
         </div>
 
         <div class="mt-6 flex gap-4">
-            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <button type="submit" class="bg-ember-500 hover:bg-ember-700 text-white font-bold py-2 px-4 rounded">
                 Update Book
             </button>
             <a href="{{ route('admin.books.index') }}" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">

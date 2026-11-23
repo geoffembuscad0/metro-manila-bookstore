@@ -6,11 +6,11 @@
             </a>
 
             <div class="flex items-center gap-5 text-sm">
-                <a href="{{ route('home') }}" class="hover:text-orange-700">Shop</a>
-                <a href="{{ route('cart.index') }}" class="hover:text-orange-700">
+                <a href="{{ route('home') }}" class="hover:text-ember-600">Shop</a>
+                <a href="{{ route('cart.index') }}" class="hover:text-ember-600">
                     Cart ({{ $cartCount }})
                 </a>
-                <a href="{{ route('orders.index') }}" class="hover:text-orange-700">
+                <a href="{{ route('orders.index') }}" class="hover:text-ember-600">
                     My orders
                 </a>
             </div>
@@ -149,14 +149,14 @@
                                 <button
                                     type="submit"
                                     wire:loading.attr="disabled"
-                                    class="rounded-lg bg-orange-700 px-6 py-3 font-semibold text-white hover:bg-orange-800 disabled:opacity-60"
+                                    class="bg-ember-500 hover:bg-ember-600 text-white font-semibold px-5 py-2.5 rounded-lg shadow-sm transition"
                                 >
                                     Add to cart
                                 </button>
                             </form>
                         @elseif (auth()->guest())
                             <a href="{{ route('login') }}"
-                               class="inline-block rounded-lg bg-orange-700 px-6 py-3 font-semibold text-white hover:bg-orange-800">
+                               class="bg-ember-500 hover:bg-ember-600 text-white font-semibold px-5 py-2.5 rounded-lg shadow-sm transition">
                                 Sign in to add to cart
                             </a>
                         @endif

@@ -14,7 +14,7 @@
           <div class="relative">
             <input id="search" type="search" wire:model.debounce.300ms="search"
                    placeholder="Search books, authors, ISBN..."
-                   class="w-full border border-gray-200 rounded-full py-2 pl-4 pr-12 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500">
+                   class="w-full border border-gray-200 rounded-full py-2 pl-4 pr-12 text-sm focus:outline-none focus:ring-2 focus:ring-ember-400">
             <button type="button" class="absolute right-1 top-1/2 -translate-y-1/2 bg-orange-600 text-white rounded-full p-2 hover:bg-orange-700"
                     aria-label="Search">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -39,7 +39,7 @@
             <a href="{{ route('login') }}" class="text-sm text-gray-700 hover:underline">Sign in</a>
           @else
             <div x-data="{ open: false }" class="relative">
-              <button type="button" @click="open = !open" class="w-10 h-10 rounded-full bg-orange-600 text-white flex items-center justify-center hover:bg-orange-700 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2" aria-label="User menu">
+              <button type="button" @click="open = !open" class="w-10 h-10 rounded-full bg-orange-600 text-white flex items-center justify-center hover:bg-orange-700 transition-colors focus:outline-none focus:ring-2 focus:ring-ember-400 focus:ring-offset-2" aria-label="User menu">
                 <i class="fas fa-user text-sm"></i>
               </button>
 
@@ -142,7 +142,7 @@
               <div class="flex flex-1 flex-col p-4">
                   <h3 class="text-sm font-semibold">
                       <a href="{{ route('product.show', $product->slug) }}"
-                        class="hover:text-orange-700">
+                        class="hover:text-ember-600">
                           {{ Str::limit($product->title, 60) }}
                       </a>
                   </h3>
@@ -172,7 +172,7 @@
                               <button
                                   wire:click="addToCart({{ $product->id }})"
                                   wire:loading.attr="disabled"
-                                  class="w-full rounded-lg bg-orange-700 px-3 py-2 text-sm font-medium text-white hover:bg-orange-800 disabled:opacity-60"
+                                  class="bg-ember-500 hover:bg-ember-600 text-white font-semibold px-5 py-2.5 rounded-lg shadow-sm transition"
                               >
                                   Add to cart
                               </button>

@@ -3,8 +3,8 @@
         <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
             <a href="{{ route('home') }}" class="text-xl font-bold text-orange-700">Local Bookstore</a>
             <div class="flex items-center gap-4 text-sm">
-                <a href="{{ route('home') }}" class="hover:text-orange-700">Shop</a>
-                <a href="{{ route('cart.index') }}" class="hover:text-orange-700">Cart ({{ $cartCount }})</a>
+                <a href="{{ route('home') }}" class="hover:text-ember-600">Shop</a>
+                <a href="{{ route('cart.index') }}" class="hover:text-ember-600">Cart ({{ $cartCount }})</a>
                 <a href="{{ route('orders.index') }}" class="font-medium text-orange-700">My orders</a>
             </div>
         </nav>
@@ -31,7 +31,7 @@
                 <h2 class="text-lg font-semibold">Order summary</h2>
                 <ul class="my-4 space-y-3 text-sm">@foreach ($cart->items as $item)<li class="flex justify-between gap-3"><span>{{ $item->book?->title }} × {{ $item->quantity }}</span><span>₱{{ number_format((float) ($item->book?->discount_price ?? $item->book?->price ?? 0) * $item->quantity, 2) }}</span></li>@endforeach</ul>
                 <div class="space-y-2 border-t pt-4 text-sm"><div class="flex justify-between"><span>Subtotal</span><span>₱{{ number_format($subtotal, 2) }}</span></div><div class="flex justify-between"><span>Local delivery</span><span>Free</span></div><div class="flex justify-between border-t pt-3 text-base font-bold"><span>Total due on delivery</span><span>₱{{ number_format($subtotal, 2) }}</span></div></div>
-                <button type="submit" wire:loading.attr="disabled" class="mt-6 w-full rounded-lg bg-orange-700 px-4 py-3 font-semibold text-white hover:bg-orange-800 disabled:opacity-60">Place COD order</button>
+                <button type="submit" wire:loading.attr="disabled" class="mt-6 w-full rounded-lg bg-ember-500 px-4 py-3 font-semibold text-white hover:bg-ember-600 disabled:opacity-60">Place COD order</button>
             </aside>
         </form>
     </main>
