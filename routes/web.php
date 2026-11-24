@@ -65,6 +65,7 @@ Route::middleware(['auth', 'verified', 'role:User'])->group(function () {
 });
 
 Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:Admin,Super Admin'])->group(function () {
+    Route::view('profile', 'profile')->name('profile');
     Route::get('dashboard', Dashboard::class)->name('dashboard');
     Route::get('books', BookIndex::class)->name('books.index');
     Route::get('books/create', CreateBook::class)->name('books.create');

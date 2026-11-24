@@ -44,10 +44,20 @@
               </button>
 
               <div x-show="open" @click.away="open = false" class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg z-50 py-1 border border-gray-200" style="display: none;">
-                <a href="{{ route('profile') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center gap-2">
+                @php
+                    $isAdmin = auth()->user()->hasAnyRole(['Admin', 'Super Admin']);
+                @endphp
+                <a href="{{ $isAdmin ? route('admin.profile') : route('profile') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center gap-2">
                   <i class="fas fa-user text-gray-500"></i>
                   {{ __('Profile') }}
                 </a>
+
+                @if($isAdmin)
+                    <a href="{{ route('admin.dashboard') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center gap-2">
+                      <i class="fas fa-gauge text-gray-500"></i>
+                      {{ __('Admin Dashboard') }}
+                    </a>
+                @endif
 
                 <form method="POST" action="{{ route('logout') }}">
                   @csrf
