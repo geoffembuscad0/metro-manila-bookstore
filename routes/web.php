@@ -53,6 +53,9 @@ Route::get('categories/{category:slug}', CustomerCategories::class)->name('categ
 Route::get('products/{book:slug}', ProductIndex::class)->name('product.show');
 
 Route::middleware(['auth', 'verified', 'role:User'])->group(function () {
+    Route::get('/dashboard', function () {
+        return redirect()->route('home');
+    })->name('dashboard');
     Route::get('cart', CartIndex::class)->name('cart.index');
     Route::get('checkout', Checkout::class)->name('checkout');
     Route::get('orders', OrderIndex::class)->name('orders.index');
